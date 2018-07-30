@@ -7,22 +7,35 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-10.times do
+puts 'Cleaning database'
+User.destroy_all
+Meal.destroy_all
+Booking.destroy_all
+puts 'Done'
+
+20.times do
   interest_tags = []
   rand(1..4).times do
     tag = ['Chinese Food', 'Asian Food', 'Western Food', 'Alcohol-related', 'Dessert and Coffee'].sample
     interest_tags << tag unless interest_tags.include? tag
   end
   user = User.new(
-    name: Faker::FunnyName.two_word_name
-    email: Faker::Internet.email
-    phone: Faker::PhoneNumber.cell_phone
-    description: Faker::StarWars.quote
+    name: Faker::FunnyName.two_word_name,
+    email: Faker::Internet.email,
+    phone: Faker::PhoneNumber.cell_phone,
+    description: Faker::StarWars.quote,
     interest: interest_tags
     )
+  user.save
   rand(0..5).times do
     meal =  Meal.new(
-      name: Faker::Food.dish
+      name: Faker::Food.dish,
+      description: Faker::Food.description,
+      price: rand(20..200).to_s + '¥',
+      category: ['Chinese Food', 'Asian Food', 'Western Food', 'Alcohol-related', 'Dessert and Coffee'].sample
       )
+    meal.user = user
+    meal.save
   end
+  user.save
 end

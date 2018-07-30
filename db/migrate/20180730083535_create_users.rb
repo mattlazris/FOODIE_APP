@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :email
       t.string :phone
-      t.array :interest
+      t.string :interest, array: true
       t.text :description
 
       t.timestamps
