@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
 
 puts 'Cleaning database'
 User.destroy_all
@@ -24,7 +23,8 @@ puts 'Done'
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.cell_phone,
     description: Faker::StarWars.quote,
-    interest: interest_tags
+    interest: interest_tags,
+    password: "123456"
     )
   user.save
   rand(0..5).times do

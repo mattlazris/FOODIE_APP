@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
   before_action :find_meal, only: [ :show, :edit, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @meals = Meal.all
