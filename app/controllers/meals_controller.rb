@@ -1,4 +1,4 @@
-class MealController < ApplicationController
+class MealsController < ApplicationController
   before_action :find_meal, only: [ :show, :edit, :update, :destroy ]
 
   def index
