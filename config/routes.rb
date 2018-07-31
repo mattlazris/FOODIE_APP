@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :users
 
   get "profile", to: "pages#profile", as: "profile"
+  get "host/:id", to: "pages#host", as: "host"
 end

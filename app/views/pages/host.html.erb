@@ -1,15 +1,15 @@
-<h1><%= @user.name %></h1>
-<div><%= @user.email %></div>
+<h1><%= @host.name %></h1>
+<div><%= @host.email %></div>
 <div>
-  <% @user.interest.each do |category| %>
+  <% @host.interest.each do |category| %>
     <%= category %>
   <% end %>
 </div>
 <div>
-  <%= @user.description %>
+  <%= @host.description %>
 </div>
 <div>
-  <% @user.meals.each do |meal| %>
+  <% @host.meals.each do |meal| %>
     <ul>
       <li>
         <div><%= link_to meal.name, meal_path(meal) %></div>
@@ -20,4 +20,4 @@
     </ul>
   <% end %>
 </div>
-<%= link_to 'Back', meals_path %>
+<%= link_to 'Back', meal_path %>
