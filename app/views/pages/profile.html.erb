@@ -1,0 +1,25 @@
+<h1><%= @user.name %></h1>
+<div>
+  <%= @user.email %>
+</div>
+<div>
+  <% @user.interest.each do |category| %>
+    <%= category %>
+  <% end %>
+</div>
+<div>
+  <%= @user.description %>
+</div>
+<div>
+  <% @user.meals.each do |meal| %>
+    <ul>
+      <li>
+        <div><%= meal.name %></div>
+        <div><%= meal.description %></div>
+        <div><%= meal.price %></div>
+        <div><%= meal.category %></div>
+      </li>
+    </ul>
+  <% end %>
+</div>
+<%= link_to 'Back', meals_path %>
