@@ -16,6 +16,8 @@
         <div><%= meal.description %></div>
         <div><%= meal.price %></div>
         <div><%= meal.category %></div>
+        <%= link_to 'Update', edit_meal_path(meal)%>
+        <div><%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }%></div>
       </li>
     </ul>
   <% end %>

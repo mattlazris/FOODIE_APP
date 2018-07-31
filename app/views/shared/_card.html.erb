@@ -7,8 +7,8 @@
     </div>
     <!-- Post Content-->
     <div class="post-content">
-      <div class="category"><%= meal.user.name %></div>
-      <h1 class="title"><%= meal.name %></h1>
+      <div class="category"><%= link_to meal.user.name, host_path(meal.user) %></div>
+      <h1 class="title"><%= link_to meal.name, meal %></h1>
       <h2 class="sub_title"><%= meal.category %></h2>
       <p class="description"><%= meal.description %></p>
     </div>
