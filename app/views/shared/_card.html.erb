@@ -1,0 +1,10 @@
+<%= link_to meal_path(meal) do %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80');">
+    <div class="card-category"><%= meal.category %></div>
+    <div class="card-description">
+      <h2><%= meal.name %></h2>
+      <p><%= meal.price %></p>
+      <p><%= meal.description %></p>
+    </div>
+  </div>
+<% end %>
