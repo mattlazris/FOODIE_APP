@@ -1,3 +1,4 @@
 import "bootstrap";
-import { initOnMouseEnter } from '../components/card';
-initOnMouseEnter();
+import "../components/card";
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();

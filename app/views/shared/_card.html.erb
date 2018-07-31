@@ -7,10 +7,15 @@
     </div>
     <!-- Post Content-->
     <div class="post-content">
-      <div class="category"><%= link_to meal.user.name, host_path(meal.user) %></div>
+      <div class="category"><%= meal.category %></div>
       <h1 class="title"><%= link_to meal.name, meal %></h1>
-      <h2 class="sub_title"><%= meal.category %></h2>
-      <p class="description"><%= meal.description %></p>
+      <h2 class="sub_title"><%= link_to meal.user.name, host_path(meal.user) %></h2>
+      <p class="description">
+        <%= "About Me" %>
+        <br>
+        <%= meal.user.description %>
+      </p>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
     </div>
   </div>
 </div>
