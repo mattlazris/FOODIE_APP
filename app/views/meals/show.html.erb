@@ -1,2 +1,13 @@
-<h1>Meal#show</h1>
-<p>Find me in app/views/meal/show.html.erb</p>
+<h1><%= @meal.name %></h1>
+<div><%= @meal.description %></div>
+<div><%= @meal.price %></div>
+<div><%= @meal.category %></div>
+<p>Recommended & Hosted by <%= link_to @meal.user.name, host_path %></p>
+<div><%= @meal.user.email %></div>
+<div><%= @meal.user.description %></div>
+<div>
+  <% @meal.user.interest.each do |category| %>
+    <%= category %>
+  <% end %>
+</div>
+<%= link_to 'See All Meals', meals_path %>
