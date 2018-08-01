@@ -303,6 +303,15 @@ body {
   height: calc(100vh - 70px);
   padding: 30px;
 }
+
+.profile2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 30% 30% 40%;
+  height: calc(100vh - 70px);
+  padding: 30px;
+}
+
 .profile .main1 {
   grid-row: 1 / span 1;
   grid-column: 1 / span 1;
@@ -336,21 +345,21 @@ body {
   grid-row: 1 / span 1;
   grid-column: 1 / span 2;
 }
-.profile .main5 {
-  grid-row: 1 / span 2;
+.profile2 .main5 {
+  grid-row: 1 / span 3;
   grid-column: 1 / span 1;
 }
-.profile .description5 {
+.profile2 .description5 {
   grid-row: 1 / span 1;
   grid-column: 2 / span 2;
 }
 
-.profile .description6 {
+.profile2 .description6 {
   grid-row: 2 / span 1;
   grid-column: 2 / span 2;
 }
 
-.main2, .description1, .description2, .main4, .main5, .description3, .description4, .description5, .description6, .stat {
+.main2, .description1, .description2, .main4, .main5, .description3, .description4, .description5, .stat {
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 50px;
@@ -373,7 +382,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 480px;
+  height: 580px;
+}
+@media (max-width: 940px) {
+  .profile {
+    display: block;
+  }
+}
+
+.description6 {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 50px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
 }
 @media (max-width: 940px) {
   .profile {
@@ -475,7 +500,6 @@ body {
  display: flex;
  border-radius: 4px;
 }
-<<<<<<< HEAD
 
 .font-colot {
   color: #37B686
@@ -484,5 +508,3 @@ body {
 .green a {
   color: #37B686
 }
-=======
->>>>>>> 5f41cfd75dc902ce4aeb8fc8ae0e2a3e0aff7f32
