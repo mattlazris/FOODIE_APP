@@ -3,6 +3,9 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def show
+  end
+
   def new
     @booking = Booking.new
     @meal = Meal.find(params[:meal_id])
@@ -15,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.price = @meal.price
     @booking.user = current_user
     if @booking.save
-      redirect_to profile_path
+      render :show
     else
       render :new
     end

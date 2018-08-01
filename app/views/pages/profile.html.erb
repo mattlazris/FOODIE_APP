@@ -44,7 +44,16 @@
       </div>
     </div>
   </div>
+  <div>
+    <h2>Bookings</h2>
+    <% @user.bookings.each do |book| %>
+      <%= book.meal.name %>
+    <% end %>
+  </div>
+  <div><%= link_to 'Be The Foodie Guide For A New Meal', new_meal_path %></div>
+  <%= link_to 'Back', meals_path %>
 </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -74,3 +83,6 @@
 <div><%= link_to 'Be The Foodie Guide For A New Meal', new_meal_path %></div>
 <%= link_to 'Back', meals_path %>
 >>>>>>> f80bac43db43b64059df2c9d8de3a247d2518cfd
+=======
+
+>>>>>>> 5f41cfd75dc902ce4aeb8fc8ae0e2a3e0aff7f32
