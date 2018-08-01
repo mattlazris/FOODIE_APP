@@ -1,27 +1,20 @@
-
 <div class="container">
   <div class="title-sign-up">
     <h2>Sign up</h2>
   </div>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <div class="cardsignup">
-        <%= f.input :name, required: true, autofocus: true %>
-        <%= f.input :interest, as: :check_boxes, collection: ['Chinese Food', 'Asian Food', 'Western Food', 'Alcohol-related', 'Dessert and Coffee'] %>
-        <%= f.input :email, required: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
-      </div>
-      <div class="btn-forms">
-        <%= f.button :submit, "Sign up" %>
-      </div>
-      <div class="blue-btn-forms">
-        <%= render "devise/shared/links" %>
-      </div>
-
-
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+    <div class="cardsignup">
+      <%= f.input :name, required: true, autofocus: true %>
+      <%= f.input :email, required: true %>
+      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password_confirmation, required: true %>
+    </div>
+    <div class="btn-forms">
+      <%= f.button :submit, "Sign up" %>
+    </div>
+    <div class="blue-btn-forms">
+      <%= render "devise/shared/links" %>
+    </div>
   <% end %>
-
-
 </div>
-
