@@ -1,13 +1,122 @@
-<h1><%= @meal.name %></h1>
-<div><%= @meal.description %></div>
-<div><%= @meal.price %></div>
-<div><%= @meal.category %></div>
-<p>Recommended & Hosted by <%= link_to @meal.user.name, host_path %></p>
-<div><%= @meal.user.email %></div>
-<div><%= @meal.user.description %></div>
-<div>
-  <% @meal.user.interest.each do |category| %>
-    <%= category %>
-  <% end %>
+<!-- <div class="home-banner">
+  <h1><%= @meal.name %></h1>
 </div>
-<%= link_to 'See All Meals', meals_path %>
+
+      <div class="cards" style="background-color: white;">
+        <div class="card-description">
+          <h2><%= @meal.name %></h2>
+          <strong><p><%= @meal.price %></p></strong>
+          <p><%= @meal.category %></p>
+          <p class="padding-bottom"><%= @meal.description %></p>
+        </div>
+        <img class="meal-picture" src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80">
+        <a class="card-link" href="#" ></a>
+      </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="cards" style="background-color: white;">
+        <div class="card-description">
+          <h2><%= @meal.name %></h2>
+          <strong><p><%= @meal.price %></p></strong>
+          <p><%= @meal.category %></p>
+          <p class="padding-bottom"><%= @meal.description %></p>
+        </div>
+        <img class="meal-picture" src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80">
+        <a class="card-link" href="#" ></a>
+      </div>
+      <div class="cards" style="background-color: white;">
+        <div class="card-description">
+          <h3>Recommended & Hosted by <%= link_to @meal.user.name, host_path %></h3>
+          <br>
+          <strong><p><%= @meal.user.name %></p></strong>
+          <p><%= @meal.user.email %></p>
+          <p><%= @meal.user.description %></p>
+          <p>
+            <% @meal.user.interest.each do |category| %>
+              <button class="btn-medium"><%= category %></button>
+            <% end %>
+          </p>
+          <p class="padding-bottom"><%= link_to 'See All Meals', meals_path %></p>
+        </div>
+        <img class="user-picture" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <div class="wrapper">
+  <div class="card2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80');">
+    <div class="card-category">Popular</div>
+    <div class="card-description">
+      <h2>Le Wagon Shanghai</h2>
+      <p>Very cool city, the best</p>
+    </div> -->
+<!--     <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+    <a class="card-link" href="#" ></a> -->
+<!--   </div>
+  <div class="card3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80');">
+    <div class="card-category">Popular</div>
+    <div class="card-description">
+      <h2>Le Wagon Shanghai</h2>
+      <p>Very cool city, the best</p>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="card2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80');">
+    <div class="card-category">Popular</div>
+    <div class="card-description">
+      <h2>Le Wagon Shanghai</h2>
+      <p>Very cool city, the best</p>
+    </div> -->
+<!--     <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+    <a class="card-link" href="#" ></a> -->
+<!--   </div>
+  <div class="card3" style="background-color: white);">
+    <div class="card-category">Popular</div>
+    <div class="card-description">
+      <h2>Le Wagon Shanghai</h2>
+      <p>Very cool city, the best</p>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="profile text-center">
+    <div class="main1">
+        <img src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80" alt="" width="400" >
+    </div>
+    <div class="main2">
+      <div class="main-content">
+        <img src="https://kitt.lewagon.com/placeholder/users/tgenaitay" alt="" width="80" class="img-circle">
+        <h2><%= @meal.user.name %></h2>
+        <p><%= @meal.user.email %></p>
+        <button class="btn btn-lg"><%= link_to 'Follow', '#' %></button>
+      </div>
+    </div>
+    <div class="description1">
+      <div class="description-content">
+        <h2><%= @meal.name %></h2>
+        <p><%= @meal.category %></p>
+        <p><%= @meal.price %></p>
+        <p class="text-justify"><%= @meal.description %></p>
+        <p><%= link_to 'See All Meals', meals_path %></p>
+        <button class="btn btn-lg"><%= link_to 'Book', '#' %></button>
+      </div>
+    </div>
+    <div class="description2">
+      <div class="description-content">
+        <h2>More about Sebastien</h2>
+        <p><%= @meal.user.description %></p>
+        <p>
+          <% @meal.user.interest.each do |category| %>
+            <button class="btn-medium"><%= category %></button>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<h1><%= @host.name %></h1>
+<!-- <h1><%= @host.name %></h1>
 <div><%= @host.email %></div>
 <div>
   <% @host.interest.each do |category| %>
@@ -20,4 +20,46 @@
     </ul>
   <% end %>
 </div>
-<%= link_to 'Back', meal_path %>
+<%= link_to 'Back', meal_path %> -->
+
+<div class="container">
+  <div class="profile text-center">
+    <div class="main3">
+        <img src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80" alt="" width="400" >
+    </div>
+    <div class="main4">
+      <div class="main-content">
+        <img src="https://kitt.lewagon.com/placeholder/users/tgenaitay" alt="" width="80" class="img-circle">
+        <h2><%= @host.name %></h2>
+        <p><%= @host.email %></p>
+        <button class="btn btn-lg"><%= link_to 'Follow', '#' %></button>
+      </div>
+    </div>
+    <div class="description3">
+      <div class="description-content">
+        <h2><%= @host.meals.name %></h2>
+        <div>
+          <% @host.meals.each do |meal| %>
+            <div><%= link_to meal.name, meal_path(meal) %></div>
+            <div><%= meal.description %></div>
+            <div><%= meal.price %></div>
+            <div><%= meal.category %></div>
+          <% end %>
+        </div>
+        <p><%= link_to 'See All Meals', meals_path %></p>
+        <button class="btn btn-lg"><%= link_to 'Book', '#' %></button>
+      </div>
+    </div>
+    <div class="description4">
+      <div class="description-content">
+        <h2>More about Sebastien</h2>
+        <p><%= @host.description %></p>
+        <p>
+          <% @host.interest.each do |category| %>
+            <button class="btn-medium"><%= category %></button>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
