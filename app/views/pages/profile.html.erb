@@ -3,9 +3,14 @@
     <div class="main5">
       <div class="main-content">
         <img src="http://kitt.lewagon.com/placeholder/users/ssaunier" alt="" width="140" class="img-circle">
-        <h2><%= @user.name %></h2>
+        <h2 class="font-colot"><%= @user.name %></h2>
         <p><%= @user.email %></p>
-        <button class="btn-medium"><%= link_to 'Be The Foodie Guide', new_meal_path %></button>
+        <p><%= @user.description %></p>
+
+          <% @user.interest.each do |category| %>
+            <p><%= category %><p>
+          <% end %>
+        <button class="btn-medium green"><%= link_to 'Be The Foodie Guide', new_meal_path %></button>
         <div class="padding-top"><%= link_to 'Back', meals_path%></div>
       </div>
     </div>
@@ -22,7 +27,7 @@
     </div>
     <div class="description6">
       <img src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80" alt="" width="200">
-      <div class="description-content">
+      <div class="description-content green">
         <p>
           <% @user.meals.each do |meal| %>
             <div><%= link_to meal.name, meal_path(meal) %></div>
@@ -31,8 +36,8 @@
             <div><%= meal.price %></div>
             <div><%= meal.category %></div>
             <br>
-            <button class="btn-medium"><%= link_to 'Update', edit_meal_path(meal)%></button>
-            <button class="btn-medium"><%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }%>
+            <button class="btn-medium green"><%= link_to 'Update', edit_meal_path(meal)%></button>
+            <button class="btn-medium green "><%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }%>
             </button>
           <% end %>
         </p>
@@ -40,4 +45,32 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 
+=======
+<div>
+  <%= @user.description %>
+</div>
+<div>
+  <% @user.meals.each do |meal| %>
+    <ul>
+      <li>
+        <div><%= link_to meal.name, meal_path(meal) %></div>
+        <div><%= meal.description %></div>
+        <div><%= meal.price %></div>
+        <div><%= meal.category %></div>
+        <%= link_to 'Update', edit_meal_path(meal)%>
+        <div><%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }%></div>
+      </li>
+    </ul>
+  <% end %>
+</div>
+<div>
+  <h2>Bookings</h2>
+  <% @user.bookings.each do |book| %>
+    <%= book.meal.name %>
+  <% end %>
+</div>
+<div><%= link_to 'Be The Foodie Guide For A New Meal', new_meal_path %></div>
+<%= link_to 'Back', meals_path %>
+>>>>>>> f80bac43db43b64059df2c9d8de3a247d2518cfd
