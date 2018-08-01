@@ -251,9 +251,8 @@ body {
 }
 
 .cardsignup {
-  height: 379px;
   width: 800px;
-  background-size: cover !important;
+  background-size: cover;
   background-position: center;
   color: #616668;
   position: relative;
@@ -266,7 +265,7 @@ body {
 
 .cardlogin {
   width: 800px;
-  background-size: cover !important;
+  background-size: cover;
   background-position: center;
   color: #616668;
   position: relative;
@@ -524,7 +523,7 @@ body {
   color: #37B686
 }
 
-.description-content a {
+#font-white-book {
   color: white;
 }
 
