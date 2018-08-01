@@ -1,5 +1,9 @@
-<h1>Book This Meal</h1>
-<div><%= @meal.name %></div>
-<div><%= @meal.user.name %></div>
-<div><%= @meal.price %></div>
-<%= render 'form', booking: @booking %>
+<div class="wrapper wrapper-img">
+  <div class="div-design">
+    <h2 class="font-color">Book This Meal</h2>
+    <p class="font-size-20">Meal: <%= @meal.name %></p>
+    <p class="font-size-20">Host: <%= @meal.user.name %></p>
+    <p class="font-size-20">Price: <%= @meal.price %></p>
+    <%= render 'form', booking: @booking %>
+  </div>
+</div>
