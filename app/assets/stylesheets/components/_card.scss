@@ -11,6 +11,8 @@ body {
 }
 
 .post-module,
+
+
 .hover {
   position: relative;
   z-index: 1;
@@ -231,6 +233,52 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);       /* OR subtle border */
 }
 
+.cardsignup {
+  height: 379px;
+  width: 800px;
+  background-size: cover !important;
+  background-position: center;
+  color: #616668;
+  position: relative;
+  left: 140px;
+  background: white;                          /* White background */
+  padding: 30px;                              /* Internal space */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);       /* OR subtle border */
+}
+
+.cardlogin {
+  width: 800px;
+  background-size: cover !important;
+  background-position: center;
+  color: #616668;
+  position: relative;
+  left: 140px;
+  background: white;                          /* White background */
+  padding: 20px;                              /* Internal space */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-forms {
+  color: #616668;
+  position: relative;
+  left: 140px;
+  padding-top: 20px;
+}
+
+.blue-btn-forms {
+  position: relative;
+  left: 140px;
+  padding-top: 8px;
+}
+
+.title-login, .title-sign-up {
+  position: relative;
+  left: 140px;
+  padding-top: 30px;
+}
+
 .profile {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -287,7 +335,23 @@ body {
   }
 }
 
-.main1, .main3 {
+.description3 {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 50px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 480px;
+}
+@media (max-width: 940px) {
+  .profile {
+    display: block;
+  }
+}
+
+.main1 {
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 20px;
@@ -295,6 +359,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+@media (max-width: 940px) {
+  .profile {
+    display: block;
+  }
+}
+
+.main3 {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 480px;
 }
 @media (max-width: 940px) {
   .profile {
@@ -354,3 +434,5 @@ body {
 .btn a {
   color:white;
 }
+
+
