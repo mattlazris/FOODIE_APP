@@ -22,5 +22,11 @@
     </ul>
   <% end %>
 </div>
+<div>
+  <h2>Bookings</h2>
+  <% @user.bookings.each do |book| %>
+    <%= book.meal.name %>
+  <% end %>
+</div>
 <div><%= link_to 'Be The Foodie Guide For A New Meal', new_meal_path %></div>
 <%= link_to 'Back', meals_path %>
