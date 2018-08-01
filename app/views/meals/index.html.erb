@@ -5,15 +5,15 @@
   </div>
 </div>
 
-  </div class="wrapper-main-page">
-  <div><strong><h3 class="font-color text-middle">Explore food</h3></strong></div>
-  <div class="container">
-    <div class="row">
-      <br>
-      <% @meals.each do |meal| %>
-        <div class="col-xs-12 col-sm-4 card-padding">
-          <%= render 'shared/card', meal: meal %>
-        </div>
-      <% end %>
-    </div>
+</div class="wrapper-main-page">
+<div class="text-middle"><strong><h3 class="font-color ">Explore food</h3></strong></div>
+<div class="container">
+  <div class="row">
+    <br>
+    <% @meals.each do |meal| %>
+      <div class="col-xs-12 col-sm-4 card-padding">
+        <%= render 'shared/card', meal: meal %>
+      </div>
+    <% end %>
   </div>
+</div>
