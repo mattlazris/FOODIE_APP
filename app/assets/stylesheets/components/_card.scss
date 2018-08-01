@@ -300,7 +300,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 50% 50%;
-  height: calc(100vh - 70px);
   padding: 30px;
 }
 
@@ -359,7 +358,7 @@ body {
   grid-column: 2 / span 2;
 }
 
-.main2, .description1, .description2, .main4, .main5, .description3, .description4, .description5, .stat {
+.main2, .description1, .description2, .main4, .main5, .description3, .description4, .stat {
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 50px;
@@ -383,6 +382,22 @@ body {
   align-items: center;
   justify-content: space-around;
   height: 580px;
+}
+@media (max-width: 940px) {
+  .profile {
+    display: block;
+  }
+}
+
+.description5 {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 50px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 180px;
 }
 @media (max-width: 940px) {
   .profile {
@@ -511,4 +526,11 @@ body {
 
 .description-content a {
   color: white;
+}
+
+#profile-id {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
 }
