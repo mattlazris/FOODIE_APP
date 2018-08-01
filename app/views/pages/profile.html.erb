@@ -12,7 +12,7 @@
               <p>
               <% end %>
             <% end %>
-            <button class="btn-medium green"><%= link_to 'Be The Foodie Guide', new_meal_path %></button>
+            <button class="btn-medium green"><%= link_to 'Add A New Meal', new_meal_path %></button>
             <div class="padding-top"><%= link_to 'Back', meals_path%></div>
           </div>
         </div>
@@ -21,7 +21,7 @@
             <div>
               <h3>Bookings</h3>
               <% @user.bookings.each do |book| %>
-                <%= book.meal.name %>
+                <%= link_to book.meal.name, meal_booking_path(book.meal, book) %>
               <% end %>
             </div>
           </div>
