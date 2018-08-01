@@ -173,6 +173,23 @@ body {
 .padding-bottom {
   padding-bottom: 18px;
 }
+.padding-top {
+  padding-top: 20px;
+}
+
+.profile-padding {
+  padding: 60px;
+  padding-bottom: 0px;
+}
+
+.email-padding {
+  padding-left: 60px;
+}
+
+.profile-picture-padding {
+  padding-top: 40px;
+  padding-left: 60px;
+}
 
 .title-padding {
   padding-left: 575px;
@@ -259,20 +276,33 @@ body {
   grid-row: 2 / span 1;
   grid-column: 1 / span 1;
 }
-.profile .main4 {
-  grid-row: 1 / span 1;
-  grid-column: 3 / span 1;
-}
 .profile .description3 {
   grid-row: 2 / span 1;
   grid-column: 2 / span 2;
+}
+.profile .main4 {
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 1;
 }
 .profile .description4 {
   grid-row: 1 / span 1;
   grid-column: 1 / span 2;
 }
+.profile .main5 {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+}
+.profile .description5 {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 2;
+}
 
-.main2, .description1, .description2, .main4, .description3, .description4, .stat {
+.profile .description6 {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 2;
+}
+
+.main2, .description1, .description2, .main4, .main5, .description3, .description4, .description5, .description6, .stat {
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 50px;
@@ -373,12 +403,12 @@ body {
   color: rgba(0,0,0,0.5);
   font-weight: lighter;
 }
-.description2 h3, .description4 h3 {
+.description2 h3, .description4 h3, .description5 h3, .description6 h3 {
   color: rgba(0,0,0,0.9);
   font-size: 21px;
   font-weight: normal;
 }
-.description2 p, .description4 p {
+.description2 p, .description4 p, .description5 p, .description6 p {
   color: rgba(0,0,0,0.5);
   font-weight: lighter;
 }
