@@ -1,0 +1,10 @@
+<%= simple_form_for [@meal, @booking] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-inputs">
+    <%= f.input :time %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Book The Meal", data: { confirm: "Please Confirm: You are booking #{@meal.name} hosted by #{@meal.user.name} with a price of #{@meal.price}" } %>
+  </div>
+<% end %>
