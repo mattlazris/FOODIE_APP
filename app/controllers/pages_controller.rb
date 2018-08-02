@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def host
-    @host = User.find(params[:id])
+    @meal = Meal.find(params[:id])
+    @host = @meal.user
   end
 end
