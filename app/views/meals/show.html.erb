@@ -1,7 +1,6 @@
 <div class="container">
   <div class="profile text-center">
     <div class="main1">
-      <img src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80" alt="" width="400" >
     </div>
     <div class="main2">
       <div class="main-content">
@@ -13,18 +12,17 @@
     </div>
     <div class="description1">
       <div class="description-content">
-        <h2><%= @meal.name %></h2>
+        <h2 class="font-size-22"><%= @meal.name %></h2>
         <p><%= @meal.category %></p>
-        <p><%= @meal.price %></p>
-        <p class="text-justify"><%= @meal.description %></p>
-        <p><%= link_to 'See All Meals', meals_path %></p>
+        <strong><p class="font-size-18 font-color-black"><%= @meal.price %></p></strong>
+        <p class="text-justify font-size-16 font-color-black"><%= @meal.description %></p>
         <a href=<%= new_meal_booking_path(@meal) %>><button class="btn btn-lg" id="font-white-book"  >Book</button></a>
       </div>
     </div>
     <div class="description2">
       <div class="description-content">
-        <h2>More about <%= @meal.user.name %></h2>
-        <p><%= @meal.user.description %></p>
+        <h2 class="font-size-22">More about <%= @meal.user.name %></h2>
+        <p class="text-justify font-size-16 font-color-black"><%= @meal.user.description %></p>
         <p>
           <% @meal.user.interest.each do |category| %>
             <button class="btn-medium"><%= category %></button>
@@ -33,4 +31,5 @@
       </div>
     </div>
   </div>
+  <p><%= link_to 'See All Meals', meals_path %></p>
 </div>
