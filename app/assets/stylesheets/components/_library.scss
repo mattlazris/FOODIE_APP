@@ -21,7 +21,7 @@
   width: 30px;
 }
 .font-color {
-  font-color: #8dc73;
+  font-color: #8dc73d;
 }
 
 .font-size-20 {
@@ -59,4 +59,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.btn-treehouse {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #8dc73d;
+  transition: background 0.3s ease;
 }
