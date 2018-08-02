@@ -24,8 +24,9 @@ puts 'Done'
     phone: Faker::PhoneNumber.cell_phone,
     description: Faker::StarWars.quote,
     interest: interest_tags,
-    password: "123456"
-    )
+    password: "123456",
+    host: true
+  )
   user.save
   rand(0..5).times do
     meal =  Meal.new(
@@ -33,7 +34,7 @@ puts 'Done'
       description: Faker::Food.description,
       price: rand(20..200).to_s + '¥',
       category: ['Chinese Food', 'Asian Food', 'Western Food', 'Alcohol-related', 'Dessert and Coffee'].sample
-      )
+    )
     meal.user = user
     meal.save
   end
