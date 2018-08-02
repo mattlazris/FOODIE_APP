@@ -2,7 +2,8 @@
   <div class="profile2 text-center">
     <div class="main5", id="profile-id">
       <div class="main-content">
-        <img src="http://kitt.lewagon.com/placeholder/users/ssaunier" alt="" width="140" class="img-circle">
+<!--         <img src="http://kitt.lewagon.com/placeholder/users/ssaunier" alt="" width="140" class="img-circle"> -->
+        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "img-circle", width: "140" %>
         <h3 class="font-colot"><%= @user.name %></h3>
         <p><%= "You are a host" if @user.host %>
         </p>
@@ -56,6 +57,8 @@
       </div>
       <div>
       </div>
+<<<<<<< HEAD
+=======
       <div>
         <h3>Your meals booked</h3>
         <table>
@@ -76,3 +79,4 @@
           <% end %>
         </table>
       </div>
+>>>>>>> fb8e4f058761800c028c06a85b16915120cc4a6b
