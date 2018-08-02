@@ -13,23 +13,23 @@
               <p>
               <% end %>
             <% end %>
-            <button class="btn-medium green"><%= link_to 'Be The Foodie Guide', new_meal_path %></button>
+            <button class="btn-medium green"><%= link_to 'Add A New Meal', new_meal_path %></button>
             <div class="padding-top"><%= link_to 'Back', meals_path%></div>
           </div>
         </div>
         <div class="description5">
           <div class="description-content">
             <div>
-              <h3>Bookings</h3>
+              <h3>Your Bookings</h3>
               <% @user.bookings.each do |book| %>
-                <%= book.meal.name %>
+                <%= link_to book.meal.name, meal_booking_path(book.meal, book) %>
               <% end %>
             </div>
           </div>
         </div>
         <div class="description6">
           <div class="description-content green">
-            <h3 class="padding-top">Meals</h3>
+            <h3 class="padding-top">Your Meals</h3>
             <p>
               <% @user.meals.each do |meal| %>
                 <div><%= link_to meal.name, meal_path(meal) %></div>
@@ -38,9 +38,12 @@
                 <div><%= meal.price %></div>
                 <div><%= meal.category %></div>
                 <br>
-                <button class="btn-medium green"><%= link_to 'Update', edit_meal_path(meal)%></button>
-                <button class="btn-medium green "><%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }%>
-                </button>
+                <%= link_to 'Update', edit_meal_path(meal), class: "btn-medium green"%>
+                <% if meal.bookings.nil? %>
+                  <%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-medium green"%>
+                <% else %>
+                  <%= link_to 'Delete', profile_path,  data: { confirm: "You cannot delete this because it is currently booked by someone." }, class: "btn-medium green"%>
+                <% end %>
               <% end %>
             </p>
           </div>
@@ -48,3 +51,26 @@
       </div>
       <div>
       </div>
+<<<<<<< HEAD
+=======
+      <div>
+        <h3>Your meals booked</h3>
+        <table>
+          <tr>
+            <th>Booked Meal</th>
+            <th>Incoming User</th>
+            <th>Scheduled Time</th>
+          </tr>
+          <% @user.meals.each do |meal| %>
+            <% meal.bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.meal.name %></td>
+                <td><%= booking.user.name %></td>
+                <td><%= booking.time %></td>
+                <td><%= link_to 'Decline', meal_booking_path(booking.meal, booking), method: :delete, data: { confirm: "Are you sure?" } %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+>>>>>>> fb8e4f058761800c028c06a85b16915120cc4a6b

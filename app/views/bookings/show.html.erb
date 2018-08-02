@@ -2,13 +2,14 @@
   <ul>
     <h3 class="fas fa-check-circle"> You’ve successfully booked the meal!</h3>
     <h5>Below are the details of your order:</h5>
-    <h4 font-weight= bold >Your meal: <%= Meal.find(params[:meal_id]).name %></h4>
-    <h4>Price: <%= Meal.find(params[:meal_id]).price %></h4>
+    <h4 font-weight= bold >Your meal: <%= @booking.meal.name %></h4>
+    <h4>Price: <%= @booking.meal.price %></h4>
     <h4>Time: <%= @booking.time %></h4>
-    <h4>Host: <%= Meal.find(params[:meal_id]).user.name %></h4>
+    <h4>Host: <%= @booking.meal.user.name %></h4>
     <h5>We’ve sent contact information of the foodie guide to your email inbox.</h5>
     <h5>Please say hello to your foodie guide!</h5>
     <h5>Enjoy your meal!</h5>
-    <%= link_to 'Continue to your profile page', profile_path %>
+    <div><%= link_to 'Cancel this', meal_booking_path(@booking.meal, @booking), method: :delete, data: { confirm: "Are you sure?" } %></div>
+    <div><%= link_to 'Continue to your profile page', profile_path %></div>
   </ul>
 </div>
