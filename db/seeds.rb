@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning database'
-User.destroy_all
-Meal.destroy_all
 Booking.destroy_all
+Meal.destroy_all
+User.destroy_all
+
 puts 'Done'
 
 20.times do
