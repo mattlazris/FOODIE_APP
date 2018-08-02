@@ -4,6 +4,8 @@
       <div class="main-content">
         <img src="http://kitt.lewagon.com/placeholder/users/ssaunier" alt="" width="140" class="img-circle">
         <h3 class="font-colot"><%= @user.name %></h3>
+        <p><%= "You are a host" if @user.host %>
+        </p>
         <p><%= @user.email %></p>
         <p><%= @user.description %></p>
         <% unless @user.interest.nil? %>
@@ -12,14 +14,18 @@
               <p>
               <% end %>
             <% end %>
-            <button class="btn-medium green"><%= link_to 'Add A New Meal', new_meal_path %></button>
+            <% if @user.host %>
+              <%= link_to 'Add A New Meal', new_meal_path, class: "btn-medium green" %>
+            <% else %>
+              <%= link_to 'Become A Host Foodie', edit_user_registration_path, class: "btn-medium green" %>
+            <% end %>
             <div class="padding-top"><%= link_to 'Back', meals_path%></div>
           </div>
         </div>
         <div class="description5">
           <div class="description-content">
             <div>
-              <h3>Bookings</h3>
+              <h3>Your Bookings</h3>
               <% @user.bookings.each do |book| %>
                 <%= link_to book.meal.name, meal_booking_path(book.meal, book) %>
               <% end %>
@@ -28,7 +34,7 @@
         </div>
         <div class="description6">
           <div class="description-content green">
-            <h3 class="padding-top">Meals</h3>
+            <h3 class="padding-top">Your Meals</h3>
             <p>
               <% @user.meals.each do |meal| %>
                 <div><%= link_to meal.name, meal_path(meal) %></div>
@@ -49,4 +55,24 @@
         </div>
       </div>
       <div>
+      </div>
+      <div>
+        <h3>Your meals booked</h3>
+        <table>
+          <tr>
+            <th>Booked Meal</th>
+            <th>Incoming User</th>
+            <th>Scheduled Time</th>
+          </tr>
+          <% @user.meals.each do |meal| %>
+            <% meal.bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.meal.name %></td>
+                <td><%= booking.user.name %></td>
+                <td><%= booking.time %></td>
+                <td><%= link_to 'Decline', meal_booking_path(booking.meal, booking), method: :delete, data: { confirm: "Are you sure?" } %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
       </div>
