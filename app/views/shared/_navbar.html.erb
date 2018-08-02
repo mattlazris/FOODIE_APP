@@ -8,11 +8,17 @@
     <% if user_signed_in? %>
       <!-- Links when logged in -->
 <<<<<<< HEAD
+<<<<<<< HEAD
       <%= link_to t(".become_a_host", default: "Become a Host"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Saved Meals", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 =======
       <%= link_to current_user.name, profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
 >>>>>>> fb8e4f058761800c028c06a85b16915120cc4a6b
+=======
+      <%= link_to t(".become_a_host", default: "Become a Host"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".saved_meal", default: "Saved Meal"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Meals", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+>>>>>>> cd5763dd2dac6c1b899b9c88425b80a103b6a766
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -24,7 +30,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to edit_user_registration_path do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
               <% end %>
             </li>

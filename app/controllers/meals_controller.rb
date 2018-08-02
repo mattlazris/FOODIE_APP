@@ -10,7 +10,11 @@ class MealsController < ApplicationController
   end
 
   def new
-    @meal = Meal.new
+    if current_user.host
+      @meal = Meal.new
+    else
+      redirect_to profile_path
+    end
   end
 
   def create
