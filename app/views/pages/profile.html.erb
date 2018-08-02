@@ -4,6 +4,8 @@
       <div class="main-content">
         <img src="http://kitt.lewagon.com/placeholder/users/ssaunier" alt="" width="140" class="img-circle">
         <h3 class="font-colot"><%= @user.name %></h3>
+        <p><%= "You are a host" if @user.host %>
+        </p>
         <p><%= @user.email %></p>
         <p><%= @user.description %></p>
         <% unless @user.interest.nil? %>
@@ -12,7 +14,11 @@
               <p>
               <% end %>
             <% end %>
-            <button class="btn-medium green"><%= link_to 'Add A New Meal', new_meal_path %></button>
+            <% if @user.host %>
+              <%= link_to 'Add A New Meal', new_meal_path, class: "btn-medium green" %>
+            <% else %>
+              <%= link_to 'Become A Host Foodie', edit_user_registration_path, class: "btn-medium green" %>
+            <% end %>
             <div class="padding-top"><%= link_to 'Back', meals_path%></div>
           </div>
         </div>
