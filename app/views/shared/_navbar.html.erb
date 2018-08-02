@@ -7,9 +7,8 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to t(".become_a_host", default: "Become a Host"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".saved_meal", default: "Saved Meal"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Meals", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".become_a_host", default: "Become a Host"), apply_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Saved Meals", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -51,7 +50,7 @@
       </div>
     <% else %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href=<%= new_user_session_path %>>Log in</a></li>
+        <li><%= link_to "Log in", new_user_session_path %></li>
       </ul>
     <% end %>
   </div>
