@@ -37,9 +37,12 @@
                 <div><%= meal.price %></div>
                 <div><%= meal.category %></div>
                 <br>
-                <button class="btn-medium green"><%= link_to 'Update', edit_meal_path(meal)%></button>
-                <button class="btn-medium green "><%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }%>
-                </button>
+                <%= link_to 'Update', edit_meal_path(meal), class: "btn-medium green"%>
+                <% if meal.bookings.nil? %>
+                  <%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-medium green"%>
+                <% else %>
+                  <%= link_to 'Delete', profile_path,  data: { confirm: "You cannot delete this because it is currently booked by someone." }, class: "btn-medium green"%>
+                <% end %>
               <% end %>
             </p>
           </div>
