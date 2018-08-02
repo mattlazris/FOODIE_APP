@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: space-around;
 }
+.wrapper3 {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+}
 .wrapper-main-page {
   display: flex;
   align-items: center;
@@ -33,6 +38,11 @@
 
 .wrapper-img2 {
   background-image: url('https://images.unsplash.com/photo-1498522271744-cdd435c13f24?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67dd7ad246d72646456ea1d02a6e9210&auto=format&fit=crop&w=1954&q=80');
+}
+
+.wrapper-img3 {
+  background-image: url('https://images.unsplash.com/photo-1498522271744-cdd435c13f24?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67dd7ad246d72646456ea1d02a6e9210&auto=format&fit=crop&w=1954&q=80');
+  height: 100vh;
 }
 
 .banner {
@@ -71,4 +81,18 @@
 
 .profile-margin-top {
   margin-top: 30px;
+}
+.meal-card-description {
+  display: flex;
+  justify-content: space-between;
+}
+.meals-card-description-margin-left {
+  margin-left: 20px;
+}
+.meals-card-description-padding-top {
+  margin-top: 5px;
+}
+
+.delete-margin-left {
+  margin-left: 3px;
 }

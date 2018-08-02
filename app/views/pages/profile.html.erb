@@ -81,92 +81,104 @@
   <div class="main5", id="profile-id">
   </div>
 </div> -->
-<div class="profile-container">
-  <div id="profile-id">
-    <div class="main5 text-center", id="profile-id">
-      <div class="main-content">
-        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "img-circle", width: "140" %>
-        <h3 class="font-colot"><%= @user.name %></h3>
-        <p><%= "You are a host" if @user.host %>
-        </p>
-        <p><%= @user.email %></p>
-        <p><%= @user.description %></p>
-        <% unless @user.interest.nil? %>
-          <% @user.interest.each do |category| %>
-            <p><%= category %><p>
+<div class="wrapper-img3">
+  <div class="profile-container">
+    <div id="profile-id padding-left">
+      <div class="main5 text-center", id="profile-id">
+        <div class="main-content">
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "img-circle", width: "140" %>
+          <h3 class="font-color"><%= @user.name %></h3>
+          <p><%= "You are a host" if @user.host %>
+          </p>
+          <p><%= @user.email %></p>
+          <p><%= @user.description %></p>
+          <% unless @user.interest.nil? %>
+            <% @user.interest.each do |category| %>
+              <p><%= category %><p>
+            <% end %>
           <% end %>
-        <% end %>
-        <% if @user.host %>
-          <%= link_to 'Add A New Meal', new_meal_path, class: "btn-medium green" %>
-        <% else %>
-          <%= link_to 'Become A Host Foodie', edit_user_registration_path, class: "btn-medium green" %>
-        <% end %>
-        <div class="padding-top"><%= link_to 'Back', meals_path%></div>
-      </div>
-    </div>
-  </div>
-  <div class="cards-container profile-margin-top">
-    <div class="row">
-      <div class="col-xs-12 col-xs-offset-0">
-        <div class="description5">
-          <div class="description-content">
-            <div>
-              <h3>Your Bookings</h3>
-              <% @user.bookings.each do |book| %>
-                <%= link_to book.meal.name, meal_booking_path(book.meal, book) %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="description5">
-          <div class="description-content">
-            <div>
-              <h3>Your meals booked</h3>
-              <table>
-                <tr>
-                  <th>Booked Meal</th>
-                  <th>Incoming User</th>
-                  <th>Scheduled Time</th>
-                </tr>
-                <% @user.meals.each do |meal| %>
-                  <% meal.bookings.each do |booking| %>
-                    <tr>
-                      <td><%= booking.meal.name %></td>
-                      <td><%= booking.user.name %></td>
-                      <td><%= booking.time %></td>
-                      <td><%= link_to 'Decline', meal_booking_path(booking.meal, booking), method: :delete, data: { confirm: "Are you sure?" } %></td>
-                    </tr>
-                  <% end %>
-                <% end %>
-              </table>
-            </div>
-          </div>
+          <% if @user.host %>
+            <%= link_to 'Add A New Meal', new_meal_path, class: "btn-medium green" %>
+          <% else %>
+            <%= link_to 'Become A Host Foodie', edit_user_registration_path, class: "btn-medium green" %>
+          <% end %>
+          <div class="padding-top"><%= link_to 'Back', meals_path%></div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="cards-container profile-margin-top">
-    <div class="row">
-      <div class="col-xs-12 col-xs-offset-0">
-         <% @user.meals.each do |meal| %>
+    <div class="cards-container profile-margin-top">
+      <div class="row">
+        <div class="col-xs-12 col-xs-offset-0">
           <div class="description5">
-            <div class="description-content green">
-              <div><%= link_to meal.name, meal_path(meal) %></div>
+            <div class="description-content">
+              <div>
+                <h3>Your meals booked</h3>
+                <table>
+                  <tr class="font-size-12 text-center">
+                    <th>Booked Meal</th>
+                    <th>Incoming User</th>
+                    <th>Scheduled Time</th>
+                  </tr>
+                  <% @user.meals.each do |meal| %>
+                    <% meal.bookings.each do |booking| %>
+                      <tr class="font-size-12 text-center">
+                        <td><%= booking.meal.name %></td>
+                        <td><%= booking.user.name %></td>
+                        <td><%= booking.time %></td>
+                        <td class="margin-left"><%= link_to 'Decline', meal_booking_path(booking.meal, booking), method: :delete, data: { confirm: "Are you sure?" } %></td>
+                      </tr>
+                    <% end %>
+                  <% end %>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="description5">
+            <div class="description-content">
+              <div>
+                <h3>Your Bookings</h3>
+                <% @user.bookings.each do |book| %>
+                  <%= link_to book.meal.name, meal_booking_path(book.meal, book) %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% if @user.host %>
+      <div class="cards-container profile-margin-top">
+        <div class="row">
+          <div class="col-xs-12 col-xs-offset-0">
+            <div class="description8">
+              <strong><h3 class="font-color-black">Meals</h3></strong>
+             <% @user.meals.each do |meal| %>
               <br>
-              <div><%= meal.description %></div>
-              <div><%= meal.price %></div>
-              <div><%= meal.category %></div>
-              <br>
-              <%= link_to 'Update', edit_meal_path(meal), class: "btn-medium green"%>
-              <% if meal.bookings.nil? %>
-                <%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-medium green"%>
-              <% else %>
-                <%= link_to 'Delete', profile_path,  data: { confirm: "You cannot delete this because it is currently booked by someone." }, class: "btn-medium green"%>
+                <div class="description-content green">
+                  <div><%= link_to meal.name, meal_path(meal) %></div>
+                  <br>
+                  <div class="meal-card-description">
+                    <div class="meals-card-description-padding-top">
+                      <%= link_to meal_path(meal) do %>
+                      <%= image_tag "https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80", width: "100" %>
+                      <% end %>
+                    </div>
+                    <div class="meals-card-description-margin-left">
+                    <div><%= meal.description %></div>
+                    <strong><div><%= meal.price %></div></strong>
+                    <strong><%= link_to 'Update', edit_meal_path(meal), class: "btn-medium green"%></strong>
+                    <% if meal.bookings.nil? %>
+                      <strong><%= link_to 'Delete', meal_path(meal), method: :delete, data: { confirm: "Are you sure?" }, class: "btn-medium green"%></strong>
+                    <% else %>
+                      <strong><%= link_to 'Delete', profile_path,  data: { confirm: "You cannot delete this because it is currently booked by someone." }, class: "btn-medium green"%></strong>
+                    <% end %>
+                  </div>
+                </div>
               <% end %>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
