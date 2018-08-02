@@ -389,12 +389,12 @@ body {
 .description5 {
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  padding: 50px;
-  margin: 10px;
+  padding: 40px;
+  margin: 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 180px;
+  width: 430px;
 }
 @media (max-width: 940px) {
   .profile {
@@ -545,7 +545,8 @@ body {
 
 #profile-id {
   flex: 0 0 450px;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 120px);
   position: sticky !important; /* !important to override Gmaps inline CSS */
   top: 0 !important;
 }
+
