@@ -23,7 +23,7 @@
     </div>
     <div class="description2">
       <div class="description-content">
-        <h2>More about Sebastien</h2>
+        <h2>More about <%= @meal.user.name %></h2>
         <p><%= @meal.user.description %></p>
         <p>
           <% @meal.user.interest.each do |category| %>
