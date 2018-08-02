@@ -178,6 +178,13 @@ body {
 .padding-top {
   padding-top: 20px;
 }
+.padding-top-45 {
+  padding-top: 45px;
+}
+
+.padding-top-132 {
+  padding-top: 132px;
+}
 
 .profile-padding {
   padding: 60px;
@@ -344,7 +351,9 @@ body {
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 50px;
-  margin: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -374,7 +383,27 @@ body {
 .description5 {
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  padding: 40px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 430px;
+}
+@media (max-width: 940px) {
+  .profile {
+    display: block;
+  }
+}
+
+.description5 a {
+  font-size: 12px;
+}
+
+.description7 {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 35px;
   margin: 20px;
   display: flex;
   align-items: center;
@@ -385,6 +414,27 @@ body {
   .profile {
     display: block;
   }
+}
+
+.description7 a {
+  font-size: 17px;
+}
+
+.description8 {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 35px;
+  margin: 20px;
+  width: 430px;
+}
+@media (max-width: 940px) {
+  .profile {
+    display: block;
+  }
+}
+
+.description8 a {
+  font-size: 17px;
 }
 
 .description6 {
@@ -473,12 +523,12 @@ body {
   color: rgba(0,0,0,0.5);
   font-weight: lighter;
 }
-.description2 h3, .description4 h3, .description5 h3, .description6 h3 {
+.description2 h3, .description4 h3, .description5 h3, .description7 h3, .description8 h3, .description6 h3 {
   color: rgba(0,0,0,0.9);
   font-size: 21px;
   font-weight: normal;
 }
-.description2 p, .description4 p, .description5 p, .description6 p {
+.description2 p, .description4 p, .description5 p, .description7 p, .description8 h3, .description6 p {
   color: rgba(0,0,0,0.5);
   font-weight: lighter;
 }
@@ -511,9 +561,13 @@ body {
 }
 
 #profile-id {
+  width: 400px;
   flex: 0 0 450px;
   height: calc(100vh - 120px);
   position: sticky !important; /* !important to override Gmaps inline CSS */
   top: 0 !important;
 }
 
+.margin-top-0 {
+  margin-top: 0;
+}
