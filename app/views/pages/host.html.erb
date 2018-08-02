@@ -1,11 +1,11 @@
 <div class="container">
   <div class="profile text-center">
     <div class="main3">
-      <img src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80" alt="" width="400" >
+      <%= image_tag "https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80", width: "400" %>
     </div>
     <div class="main4">
       <div class="main-content">
-        <img src="https://kitt.lewagon.com/placeholder/users/tgenaitay" alt="" width="80" class="img-circle">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/tgenaitay", class: "img-circle", width: "80" %>
         <h2><%= @host.name %></h2>
         <p><%= @host.email %></p>
         <button class="btn btn-lg"><%= link_to 'Follow', '#' %></button>

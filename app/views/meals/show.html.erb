@@ -18,7 +18,7 @@
         <p><%= @meal.price %></p>
         <p class="text-justify"><%= @meal.description %></p>
         <p><%= link_to 'See All Meals', meals_path %></p>
-        <a href=<%= new_meal_booking_path(@meal) %>><button class="btn btn-lg" id="font-white-book"  >Book</button></a>
+        <button class="btn btn-lg" id="font-white-book"><%= link_to "Book", new_meal_booking_path(@meal) %></button>
       </div>
     </div>
     <div class="description2">
