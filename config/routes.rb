@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   get "profile", to: "pages#profile", as: "profile"
   get "host/:id", to: "pages#host", as: "host"
+  get "apply", to: "pages#apply", as: "apply"
 end
