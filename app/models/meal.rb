@@ -1,4 +1,6 @@
 class Meal < ApplicationRecord
+  acts_as_favoritable
+
   mount_uploader :photo, PhotoUploader
 
   belongs_to :user
