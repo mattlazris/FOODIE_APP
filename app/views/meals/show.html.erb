@@ -1,7 +1,7 @@
 <div class="container">
   <div class="profile text-center">
     <div class="main1">
-      <%= cl_image_tag @meal.photo, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @meal.photo, height: 330, width: 400, crop: :fill %>
     </div>
     <div class="main2">
       <div class="main-content">
@@ -34,7 +34,7 @@
         <p>
           <% unless @meal.user.interest.nil? %>
             <% @meal.user.interest.each do |category| %>
-              <button class="btn-medium"><%= category %></button>
+              <%= category %>
             <% end %>
           <% end %>
         </p>

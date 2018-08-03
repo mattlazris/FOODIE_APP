@@ -20,10 +20,16 @@
         <h2><%= @host.meals.name %></h2>
         <div>
           <% @host.meals.each do |meal| %>
+            <br>
+            <div class="host-container">
+            <div><%= image_tag "https://kitt.lewagon.com/placeholder/users/tgenaitay", width: "100" %></div>
+            <div class="padding-left-50">
             <div><%= link_to meal.name, meal_path(meal) %></div>
             <div><%= meal.description %></div>
             <div><%= meal.price %></div>
             <div><%= meal.category %></div>
+            </div>
+            </div>
           <% end %>
         </div>
         <p><%= link_to 'See All Meals', meals_path %></p>
