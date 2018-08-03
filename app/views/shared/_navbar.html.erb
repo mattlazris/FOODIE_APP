@@ -8,7 +8,7 @@
     <% if user_signed_in? %>
       <!-- Links when logged in -->
       <%= link_to t(".become_a_host", default: "Become a Host"), edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Saved Meals", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Saved Meals", saves_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">

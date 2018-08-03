@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :host ]
-  before_action :find_current_user, only: [ :profile, :favorite, :follow, :unfavorite, :unfollow ]
+  before_action :find_current_user, only: [ :profile, :favorite, :unfavorite, :saves, :follows ]
   before_action :find_meal, only: [ :favorite, :host, :unfavorite ]
 
   def profile
@@ -20,6 +20,10 @@ class PagesController < ApplicationController
     redirect_to request.referrer
   end
 
+  def saves
+    @meals = current_user.favorited_by_type('Meal')
+  end
+
   def follow
     @user = User.find(params[:user_id])
     current_user.favorite @user
@@ -30,6 +34,10 @@ class PagesController < ApplicationController
     @user = User.find(params[:user_id])
     current_user.remove_favorite @user
     redirect_to request.referrer
+  end
+
+  def follows
+    @users = current_user.favorited_by_type('User')
   end
 
   private
