@@ -12,6 +12,7 @@
                 <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
               <% end %>
               <%= f.input :name, required: true, hint: "If you are to become a host, please use your real name" %>
+              <%= f.input :description, required: true, hint: "Write down some serious lines about food" %>
               <%= f.input :photo %>
               <%= f.input :photo_cache, as: :hidden %>
               <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
