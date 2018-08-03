@@ -33,7 +33,7 @@ puts 'Done'
     meal =  Meal.new(
       name: Faker::Food.dish,
       description: Faker::Food.description,
-      price: rand(20..200).to_s + '¥',
+      price: '¥' + rand(20..200).to_s,
       category: ['Chinese Food', 'Asian Food', 'Western Food', 'Alcohol-related', 'Dessert and Coffee'].sample
     )
     meal.user = user

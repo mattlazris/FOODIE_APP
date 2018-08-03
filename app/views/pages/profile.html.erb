@@ -100,7 +100,7 @@
           <% if @user.host %>
             <%= link_to 'Add A New Meal', new_meal_path, class: "btn-medium green" %>
           <% else %>
-            <%= link_to 'Become A Host Foodie', edit_user_registration_path, class: "btn-medium green" %>
+            <%= link_to 'Become A Host', edit_user_registration_path, class: "btn-medium green" %>
           <% end %>
           <div class="padding-top"><%= link_to 'Back', meals_path%></div>
         </div>
@@ -112,9 +112,9 @@
           <div class="description5">
             <div class="description-content">
               <div>
-                <h3>Your meals booked</h3>
+                <h3>Hosting:</h3>
                 <table>
-                  <tr class="font-size-12 text-center">
+                  <tr class="font-size-12 text-center" id="profile-table">
                     <th>Booked Meal</th>
                     <th>Incoming User</th>
                     <th>Scheduled Time</th>
@@ -136,7 +136,7 @@
           <div class="description5">
             <div class="description-content">
               <div>
-                <h3>Your Bookings</h3>
+                <h3>Attending:</h3>
                 <% @user.bookings.each do |book| %>
                   <%= link_to book.meal.name, meal_booking_path(book.meal, book) %>
                 <% end %>
