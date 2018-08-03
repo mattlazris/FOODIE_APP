@@ -14,7 +14,9 @@
       <div class="description-content">
         <h2 class="font-size-22"><%= @meal.name %></h2>
         <p><%= @meal.category %></p>
-        <strong><p class="font-size-18 font-color-black"><%= @meal.price %></p></strong>
+        <strong>
+          <p class="font-size-18 font-color-black"><%= @meal.price %></p>
+        </strong>
         <p class="text-justify font-size-16 font-color-black"><%= @meal.description %></p>
         <a href=<%= new_meal_booking_path(@meal) %>><button class="btn btn-lg" id="font-white-book">Book</button></a>
       </div>
@@ -24,8 +26,10 @@
         <h2 class="font-size-22">More about <%= @meal.user.name %></h2>
         <p class="text-justify font-size-16 font-color-black"><%= @meal.user.description %></p>
         <p>
-          <% @meal.user.interest.each do |category| %>
-            <button class="btn-medium"><%= category %></button>
+          <% unless @meal.user.interest.nil? %>
+            <% @meal.user.interest.each do |category| %>
+              <button class="btn-medium"><%= category %></button>
+            <% end %>
           <% end %>
         </p>
       </div>
