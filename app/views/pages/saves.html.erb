@@ -1,0 +1,7 @@
+<h1>Saved Meals</h1>
+<% @meals.each do |meal| %>
+  <%= link_to meal.name, meal %>
+  <%= meal.price %>
+  <%= meal.user.name %>
+<% end %>
+<%= link_to 'Back', profile_path %>
