@@ -9,7 +9,7 @@
             <table>
               <tr class="font-size-12 text-center" id="profile-table">
                 <th><%= link_to "Following", follows_path %></th>
-                <th>Followers</th>
+                <th><%= link_to 'Followers', followers_path %></th>
               </tr>
               <tr class="font-size-12 text-center">
                 <td><%= @user.favorited_by_type_count 'User' %></td>

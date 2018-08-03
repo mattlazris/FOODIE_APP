@@ -40,6 +40,10 @@ class PagesController < ApplicationController
     @users = current_user.favorited_by_type('User')
   end
 
+  def followers
+    @users = current_user.favoritors
+  end
+
   private
   def find_current_user
     if user_signed_in?
