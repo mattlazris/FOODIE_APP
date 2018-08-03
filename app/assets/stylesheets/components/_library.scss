@@ -9,6 +9,9 @@
   display: flex;
   justify-content: space-around;
 }
+.wrapper4 {
+  height: 100vh;
+}
 .wrapper-main-page {
   display: flex;
   align-items: center;
@@ -58,6 +61,11 @@
 .profile-margin-top {
   margin-top: 30px;
 }
+
+.profile-margin-top2 {
+  margin-top: 50px;
+}
+
 .meal-card-description {
   display: flex;
   justify-content: space-between;

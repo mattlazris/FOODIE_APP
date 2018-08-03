@@ -1,7 +1,15 @@
-<h1>Saved Meals</h1>
-<% @meals.each do |meal| %>
-  <%= link_to meal.name, meal %>
-  <%= meal.price %>
-  <%= meal.user.name %>
-<% end %>
-<%= link_to 'Back', profile_path %>
+<div class="wrapper4 wrapper-img2 padding-top-50">
+  <div class="row">
+    <div class="col col-sm-12 col-sm-offset-0">
+      <div class="div-design">
+        <h2>Saved Meals</h2>
+        <% @meals.each do |meal| %>
+          <%= link_to meal.name, meal %>
+          <%= meal.price %>
+          <%= meal.user.name %>
+        <% end %>
+        <%= link_to 'Back', profile_path %>
+      </div>
+    </div>
+  </div>
+</div>
