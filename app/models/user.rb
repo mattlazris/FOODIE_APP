@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  acts_as_favoritor
+  acts_as_favoritable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :photo, PhotoUploader

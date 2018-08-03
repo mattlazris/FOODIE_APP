@@ -9,7 +9,7 @@
     <div class="post-content">
       <div class="category"><%= meal.category %></div>
       <h1 class="title"><%= link_to meal.name, meal %></h1>
-      <h2 class="sub_title"><%= link_to meal.user.name, host_path(meal.user) %></h2>
+      <h2 class="sub_title"><%= link_to meal.user.name, meal_host_path(meal) %></h2>
       <p class="description">
         <%= "About Me" %>
         <br>

@@ -24,6 +24,8 @@ gem 'cloudinary'
 
 gem 'carrierwave', '~> 1.2'
 
+gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

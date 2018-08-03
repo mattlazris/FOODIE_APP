@@ -1,13 +1,35 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :host ]
-  before_action :find_current_user, only: [ :profile ]
+  before_action :find_current_user, only: [ :profile, :favorite, :follow, :unfavorite, :unfollow ]
+  before_action :find_meal, only: [ :favorite, :host, :unfavorite ]
 
   def profile
   end
 
   def host
-    @meal = Meal.find(params[:id])
     @host = @meal.user
+  end
+
+  def favorite
+    @user.favorite @meal
+    redirect_to request.referrer
+  end
+
+  def unfavorite
+    @user.remove_favorite @meal
+    redirect_to request.referrer
+  end
+
+  def follow
+    @user = User.find(params[:user_id])
+    current_user.favorite @user
+    redirect_to request.referrer
+  end
+
+  def unfollow
+    @user = User.find(params[:user_id])
+    current_user.remove_favorite @user
+    redirect_to request.referrer
   end
 
   private
@@ -17,5 +39,9 @@ class PagesController < ApplicationController
     else
       redirect_to new_user_session_path
     end
+  end
+
+  def find_meal
+    @meal = Meal.find(params[:meal_id])
   end
 end
