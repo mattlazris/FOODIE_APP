@@ -1,10 +1,11 @@
 <div class="container">
   <div class="profile text-center">
     <div class="main1">
+      <%= cl_image_tag @meal.photo, height: 300, width: 400, crop: :fill %>
     </div>
     <div class="main2">
       <div class="main-content">
-        <img src="https://kitt.lewagon.com/placeholder/users/tgenaitay" alt="" width="80" class="img-circle">
+        <img src=<%= @meal.user.photo %> alt="" width="80" class="img-circle">
         <h2><%= link_to @meal.user.name, host_path %></h2>
         <p><%= @meal.user.email %></p>
         <button class="btn btn-lg"><%= link_to 'Follow', '#' %></button>
