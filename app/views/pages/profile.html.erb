@@ -115,12 +115,17 @@
             </div>
           <% end %>
           <div>
-            <h3><%= link_to "Saved Meals", saves_path %></h3>
-            <ul>
+          <div class="description5 profile-margin-top2">
+            <div class="description-content">
+              <h3>Saved Meals</h3>
               <% @user.favorited_by_type('Meal').each do |meal| %>
-                <li><%= link_to meal.name, meal_path(meal) %></li>
+                <%= link_to meal.name, meal_path(meal) %>
               <% end %>
-            </ul>
+              <h2><%= link_to "Details", saves_path %></h2>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
