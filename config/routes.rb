@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile", as: "profile"
   get "saves", to: "pages#saves", as: "saves"
   get "follows", to: "pages#follows", as: "follows"
+  get "followers", to: "pages#followers", as: "followers"
 end
