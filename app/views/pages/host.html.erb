@@ -1,9 +1,6 @@
 <div class="container">
   <div class="profile">
-    <div class="main3">
-      <%= image_tag "https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=304a04115ffd171fdcc04a834afff74c&auto=format&fit=crop&w=1950&q=80", width: "520" %>
-    </div>
-    <div class="main4">
+    <div class="main4 text-center">
       <div class="main-content">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/tgenaitay", width: "80", class: "img-circle" %>
         <h2><%= @host.name %></h2>
@@ -16,10 +13,16 @@
         <h2><%= @host.meals.name %></h2>
         <div>
           <% @host.meals.each do |meal| %>
+            <br>
+            <div class="host-container">
+            <div><%= image_tag "https://kitt.lewagon.com/placeholder/users/tgenaitay", width: "100" %></div>
+            <div class="padding-left-50">
             <div><%= link_to meal.name, meal_path(meal) %></div>
             <div><%= meal.description %></div>
             <div><%= meal.price %></div>
             <div><%= meal.category %></div>
+            </div>
+            </div>
           <% end %>
         </div>
         <p><%= link_to 'See All Meals', meals_path %></p>
@@ -27,7 +30,7 @@
     </div>
     <div class="description4">
       <div class="description-content">
-        <h2>More about Sebastien</h2>
+        <h2>More about <%= @host.name %></h2>
         <p><%= @host.description %></p>
         <p>
           <% @host.interest.each do |category| %>
