@@ -13,7 +13,7 @@ User.destroy_all
 
 puts 'Done'
 
-20.times do
+3.times do
   interest_tags = []
   rand(1..4).times do
     tag = ['Chinese Food', 'Asian Food', 'Western Food', 'Alcohol-related', 'Dessert and Coffee'].sample
@@ -34,6 +34,7 @@ puts 'Done'
       name: Faker::Food.dish,
       description: Faker::Food.description,
       price: '¥' + rand(20..200).to_s,
+      remote_photo_url: Faker::LoremPixel.image("300x400", false, 'food'),
       category: ['Chinese Food', 'Asian Food', 'Western Food', 'Alcohol-related', 'Dessert and Coffee'].sample
     )
     meal.user = user
