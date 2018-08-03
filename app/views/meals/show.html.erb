@@ -28,7 +28,7 @@
         <p>
           <% unless @meal.user.interest.nil? %>
             <% @meal.user.interest.each do |category| %>
-              <button class="btn-medium"><%= category %></button>
+              <%= category %>
             <% end %>
           <% end %>
         </p>
